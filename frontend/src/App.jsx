@@ -8,7 +8,7 @@ function App() {
 
     function getHello() {
       const greet = document.getElementById('greet')
-        fetch('http://localhost:4000/api/hello').then(response => response.json()).then(data => greet.innerHTML = JSON.stringify(data))
+        fetch(import.meta.env.VITE_API_SERVER + '/api/hello').then(response => response.json()).then(data => greet.innerHTML = JSON.stringify(data))
     }
 
     useEffect(getHello)
